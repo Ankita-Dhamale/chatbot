@@ -1,0 +1,26 @@
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
+
+
+bot = ChatBot()
+convo = [
+    'hello',
+    'hii',
+    'what is your name',
+    'my name is bot',
+    'how are you',
+    "I'm fine....howz u?"
+]
+
+trainer = ListTrainer(bot)
+trainer.train(convo)
+bot.get_response("hello")
+
+# Here I get an error as below
+
+# Traceback (most recent call last):
+#  File "C:/Users/ADMIN/PycharmProjects/chatterbot/chatbot1.py", line 17, in <module>
+#    trainer.train(convo)
+#  File "C:\Users\ADMIN\PycharmProjects\chatterbot\venv\lib\site-packages\chatterbot\trainers.py", line 103, in train
+# List Trainer: [###                 ] 17%    statement_search_text = self.chatbot.storage.tagger.get_bigram_pair_string(text)
+# AttributeError: 'ChatBot' object has no attribute 'storage'
